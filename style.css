@@ -24,6 +24,7 @@
   height: var(--header-height);
   margin: 0 auto;
   padding: 0 50px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -49,6 +50,7 @@
   margin: 0;
   padding: 0;
   list-style: none;
+
   display: flex;
   align-items: center;
 }
@@ -76,27 +78,28 @@
   white-space: nowrap;
 }
 
+/* underline ПІДГОТОВЛЕНИЙ, але прихований */
 .nav__link::after {
   content: "";
   position: absolute;
-  left: 0;
-  right: 0;
+  left: 50%;
   bottom: 0;
 
+  width: 37px;
   height: 4px;
+
+  transform: translateX(-50%);
   background-color: var(--blue-color);
   border-radius: 8px;
   opacity: 0;
 }
 
+/* hover — ТІЛЬКИ синій текст, БЕЗ underline */
 .nav__link:hover {
   color: var(--blue-color);
 }
 
-.nav__link:hover::after {
-  opacity: 1;
-}
-
+/* active — синій текст + underline */
 .nav__link.is-active {
   color: var(--blue-color);
 }
